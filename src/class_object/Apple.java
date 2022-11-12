@@ -7,6 +7,12 @@ public class Apple {
         //Each time you created a new object, this block will be executed
     }
 
+    //Overloading constructor with 3 args
+    public Apple(String color, double price, String taste) {
+        this.color = color;
+        this.price = price;
+        this.taste = taste;
+    }
 
     //instance variables - fields - states - attributes
     public String color; // null (default value)
