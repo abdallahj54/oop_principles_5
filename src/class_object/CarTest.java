@@ -2,6 +2,7 @@ package class_object;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class CarTest {
     public static void main(String[] args) {
@@ -49,14 +50,12 @@ public class CarTest {
          */
 
         System.out.println("\n---Count Blue Beige and 2023---");
-        int countBlue = 0, countBeige = 0, year2023 = 0;
+        int countBB2023 = 0;
 
         for (Car car : cars) {
-            if(car.color.equals("Blue")) countBlue++;
-            if(car.color.equals("Beige")) countBeige++;
-            if(car.year == 2023) year2023++;
+            if(car.color.equals("Blue") || car.color.equals("Beige") || car.year == 2023) countBB2023++;
         }
-        System.out.println(countBlue + countBeige + year2023);
+        System.out.println(countBB2023);
 
 
         /*
@@ -65,6 +64,18 @@ public class CarTest {
 
         System.out.println("\n---Remove all Tesla and Print the size of cars---");
 
+        /*
+        Iterator<Car> iterator = cars.iterator();
 
+        while(iterator.hasNext()){
+            if(iterator.next().make.equals("Tesla")) iterator.remove();
+        }
+
+        System.out.println(cars.size());
+
+         */
+
+        cars.removeIf(car -> car.make.equals("Tesla"));
+        System.out.println(cars.size());
     }
 }
