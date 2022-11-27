@@ -73,11 +73,14 @@ public class Employee_Exercise {
                 tester = 0, developer = 0, manager = 0, designer = 0, systemArchitect = 0, scrumMaster = 0;
 
         Employee youngestTester = new Employee();
+        youngestTester.setAge(Integer.MAX_VALUE); //Setting the age to Integers Max Value
         Employee youngestDeveloper = new Employee();
+        youngestDeveloper.setAge(Integer.MAX_VALUE); //Setting the age to Integers Max Value
         Employee youngestDesigner = new Employee();
-        Employee managerEmployee = new Employee();
-        Employee systemArchitectEmployee = new Employee();
-        Employee scrumMasterEmployee = new Employee();
+        youngestDesigner.setAge(Integer.MAX_VALUE); //Setting the age to Integers Max Value
+        Employee managerEmployee = null;
+        Employee systemArchitectEmployee = null;
+        Employee scrumMasterEmployee = null;
 
         for (Employee employee : employees) {
             //Task 1 Employee numbers for each company
@@ -93,7 +96,7 @@ public class Employee_Exercise {
             else if(employee.getJobPosition().equals("System Architect")) systemArchitect++;
             else scrumMaster++;
 
-            //Task3 Find the youngest (FIX THIS ONE)
+            //Task3 Find the youngest
             if(employee.getJobPosition().equals("Tester") && employee.getAge() < youngestTester.getAge()) youngestTester = employee;
             else if(employee.getJobPosition().equals("Developer") && employee.getAge() < youngestDeveloper.getAge()) youngestDeveloper = employee;
             else if(employee.getJobPosition().equals("Designer") && employee.getAge() < youngestDesigner.getAge()) youngestDesigner = employee;
